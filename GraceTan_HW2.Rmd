@@ -1,0 +1,49 @@
+---
+title: "HW2_R_Markdown"
+author: "Grace Tan"
+date: "September 2, 2020"
+output: html_document
+---
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### 2a) Solving a System of Equations  
+
+* 2x + 5y = 33  
+* x + 3y = 19
+
+Multiply the second equation by -2
+
+* 2x + 5y = 33  
+* -2x - 6y = -38
+
+Eliminate the x-variable through subtraction
+
+-1y = -5  
+y = 5
+
+### 2b) Vector Creation
+
+```{r vector}
+vector <- seq(1, 100, by=1)
+table(vector)
+```
+
+Calculate the mean of the 0-100 sequence
+```{r mean}
+sum(vector)/length(vector)
+```
+
+### 2c) Install the dplyr package
+
+```{r data}
+library(dbplyr)
+first_column <- c("A","D")
+second_column <- c("B","E")
+third_column <- c("C","F")
+fourth_column <- c("D","G")
+letters <- data.frame(first_column, second_column, third_column, fourth_column)
+print(letters)
+```
