@@ -1,7 +1,7 @@
 ---
 title: "HW2_R_Markdown"
 author: "Grace Tan"
-date: "September 2, 2020"
+date: "September 5, 2020"
 output: html_document
 ---
 
@@ -22,21 +22,27 @@ Multiply the second equation by -2
 Eliminate the x-variable through subtraction
 
 -1y = -5  
-y = 5
+**y = 5**
 
 ### 2b) Vector Creation
 
 ```{r vector}
-vector <- seq(1, 100, by=1)
-table(vector)
+vector_100 <- c(1:100)
+is.vector("vector_100")
+table(vector_100)
 ```
 
-Calculate the mean of the 0-100 sequence
+Calculate the mean of the 0-100 sequence without using the mean function
 ```{r mean}
-sum(vector)/length(vector)
+sum(vector_100)/length(vector_100)
 ```
 
-### 2c) Install the dplyr package
+Check with the mean function!
+```{r mean formula}
+mean(vector_100)
+```
+
+### 2c) Install the dplyr package and create a data frame
 
 ```{r data}
 library(dbplyr)
@@ -46,4 +52,5 @@ third_column <- c("C","F")
 fourth_column <- c("D","G")
 letters <- data.frame(first_column, second_column, third_column, fourth_column)
 print(letters)
+is.data.frame(letters)
 ```
