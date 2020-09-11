@@ -1,0 +1,43 @@
+---
+title: "GraceTan_HW3"
+author: Grace Tan
+date: "Sept 12, 2020"
+output: html_document
+---
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### 1) Write a function to calculate mean
+
+```{r}
+my_mean <- function(x){
+  sum(x, na.rm=TRUE)/length(x)
+}
+
+my_mean(1:10)
+mean(1:10)
+my_mean(1:10) == mean(1:10)
+```
+
+### 2) The range of the variable Year
+
+```{r}
+library(readr)
+key_crop_yields <- read.csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-01/key_crop_yields.csv")
+
+range(key_crop_yields$Year)
+```
+### 3) Use my mean function to calculate the average tonnes per hectare of Maize
+
+```{r}
+my_mean(key_crop_yields$Maize..tonnes.per.hectare.)
+```
+
+### 4) Save a file with the name of the variable Entity
+
+```{r}
+print(key_crop_yields$Entity)
+```
+
